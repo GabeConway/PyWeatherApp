@@ -6,3 +6,4 @@ pandas
 streamlit_bokeh_events
 openweathermapy
 configparser
+zipcodes
