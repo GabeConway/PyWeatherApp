@@ -1,0 +1,8 @@
+requests
+bokeh
+tabulate
+streamlit
+pandas
+streamlit_bokeh_events
+openweathermapy
+configparser
