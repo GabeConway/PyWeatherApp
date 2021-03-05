@@ -24,5 +24,4 @@ st.write("Location access will be requested or specify your location")
 get_location(debug_log)
 
 # Manual Selection
-if st.button("Specify Location"):
-    get_zipcode(debug_log)
+get_zipcode(debug_log)
