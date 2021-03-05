@@ -65,7 +65,7 @@ def get_location(debug_log):
 
 
 def get_zipcode(debug_log):
-    city = st.text_input("or enter your zip code (US Only) ")
+    city = st.text_input("Enter your zip code (US Only) ")
     if city:
         if zipcodes.is_real(city) == 1:
             data = owm.get_current(zip=city, **settings)
