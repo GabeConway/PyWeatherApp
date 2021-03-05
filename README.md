@@ -14,7 +14,7 @@ Here is what you can change in config.ini
 app_name // Name of app displayed on webpage\
 favicon // emoji for favicon and appended to app name\
 remove_streamlit_menu // streamlit has a menu that is unused in this app, by default this is removed\
-enable_verbose_logging // raw api data will be displayed on page with response\
+enable_verbose_logging // raw api data will be displayed on page with response
 
 [OPENWEATHERMAP]
 api_key // api key for our open weather map account\
