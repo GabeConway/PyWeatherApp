@@ -27,4 +27,4 @@ temp_units // unit of measurements for weather data. Default is imperial. Other 
 rename verbose logging mode to debug mode as that better defines what it does\
 fix a minor issue with boolean values being used as strings, such as verbose logging\
 add graphs to weather report with historical values\
-add more data in general to weather report\
+add more data in general to weather report
