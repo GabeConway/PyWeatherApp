@@ -3,9 +3,9 @@ A weather web application based on Streamlit &amp; OpenWeatherMap
 You will need an open weather map API key, found here - https://openweathermap.org/
 
 # Quick Setup
-1 - Install API key in config.ini
-2 - install requirements.txt if needed
-3 - Start the app with "streamlit run main.py"
+1 - Install API key in config.ini \n
+2 - install requirements.txt if needed \n
+3 - Start the app with "streamlit run main.py" \n
 
 # Configuration
 Here is what you can change in config.ini
