@@ -8,7 +8,7 @@ You will need an open weather map API key, found here - https://openweathermap.o
 3 - Start the app with "streamlit run main.py" 
 
 # Configuration
-Here is what you can change in config.ini\
+Here is what you can change in config.ini
 
 [DEFAULT]
 app_name // Name of app displayed on webpage\
@@ -18,4 +18,4 @@ enable_verbose_logging // raw api data will be displayed on page with response\
 
 [OPENWEATHERMAP]
 api_key // api key for our open weather map account\
-temp_units // unit of measurements for weather data. Default is imperial. Other options include "metric"\
+temp_units // unit of measurements for weather data. Default is imperial. Other options include "metric"
