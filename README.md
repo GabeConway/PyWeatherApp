@@ -24,7 +24,7 @@ api_key // api key for our open weather map account\
 temp_units // unit of measurements for weather data. Default is imperial. Other options include "metric"
 
 # To Do
-rename verbose logging mode to debug mode as that better defines what it does
-fix a minor issue with boolean values being used as strings, such as verbose logging
-add graphs to weather report with historical values
-add more data in general to weather report
+rename verbose logging mode to debug mode as that better defines what it does\
+fix a minor issue with boolean values being used as strings, such as verbose logging\
+add graphs to weather report with historical values\
+add more data in general to weather report\
