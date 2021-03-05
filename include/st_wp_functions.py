@@ -7,6 +7,7 @@ from bokeh.models import CustomJS
 from streamlit_bokeh_events import streamlit_bokeh_events
 import pandas as pd
 import configparser
+import zipcodes
 
 # Load in config and set open weather api defaults
 config = configparser.ConfigParser()
@@ -18,22 +19,22 @@ settings = {
 
 
 def remove_streamlit_menu(enabled):
-    # this disables the streamlit menu
+    # this hides the streamlit menu
     if enabled == "1":
-        hide_streamlit_style = """
+        st_style = """
                     <style>
                     #MainMenu {visibility: hidden;}
                     footer {visibility: hidden;}
                     </style>
                     """
-        st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+        st.markdown(st_style, unsafe_allow_html=True)
 
 
 def set_page_config(title, pageicon):
     st.set_page_config(page_title=title, page_icon=pageicon, layout="centered")
 
 
-def get_location(verbose_log):
+def get_location(debug_log):
     loc_button = Button(label="Get Location")
     loc_button.js_on_event(
         "button_click",
@@ -60,23 +61,26 @@ def get_location(verbose_log):
             raw = result.get("GET_LOCATION")
             location = (raw["lat"], raw["lon"])
             data = owm.get_current(location, **settings)
-            weather_data_gen(data, verbose_log)
+            weather_data_gen(data, debug_log)
 
 
-def get_zipcode(verbose_log):
+def get_zipcode(debug_log):
     city = st.text_input("or enter your zip code (US Only) ")
     if city:
-        data = owm.get_current(zip=city, **settings)
-        weather_data_gen(data, verbose_log)
+        if zipcodes.is_real(city) == 1:
+            data = owm.get_current(zip=city, **settings)
+            weather_data_gen(data, debug_log)
+        else:
+            st.write("Not a valid zip code")
 
 
-def weather_data_gen(data, verbose_log):
+def weather_data_gen(data, debug_log):
     locname = "your location: " + data["name"] + "," + data["sys"]["country"]
     currentcondition = "current condition: " + data["weather"][0]["description"]
     st.subheader(currentcondition)
     st.write(locname)
     st.write(f"Results in {settings.get('units')}")
     st.table(pd.DataFrame(data["main"], index=["result"]))
-    if verbose_log == "1":
-        st.write("RAW data")
+    if debug_log == "1":
+        st.write("RAW data weather_data_gen")
         st.json(data)
